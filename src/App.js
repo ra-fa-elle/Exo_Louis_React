@@ -6,10 +6,9 @@
 
 import React, { Component } from 'react'
 import './App.css'
-import Card from './Card'
+import Article from './Article'
 
-class App extends Component 
-{
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -34,13 +33,11 @@ class App extends Component
 
   render() {
     return (
-      <>
-      <div className="ctn">
+      <div className="wrapper">
         {this.state.data.map((item, i) => (
-            <Card title={item.title} body={item.body}/>
+              <Article key={i} title={item.title} content={item.body}/>
           ))}
       </div>
-      </>
     )
   }
 }
